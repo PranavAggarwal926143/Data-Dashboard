@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mock Data Dashboard</title>
+    <!-- Modern Font: Outfit -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <!-- Sidebar layout with glassmorphism -->
+        <aside class="sidebar glass-container">
+            <div class="logo">
+                <h2>Data<span class="highlight">Dash</span></h2>
+            </div>
+            
+            <div class="controls">
+                <div class="control-group">
+                    <label for="chartType">Chart Visualization</label>
+                    <div class="select-wrapper">
+                        <select id="chartType">
+                            <option value="line">Line Chart</option>
+                            <option value="bar">Bar Chart</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <button id="refreshBtn" class="primary-btn">
+                    <svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" height="18" width="18" xmlns="http://www.w3.org/2000/svg">
+                        <polyline points="23 4 23 10 17 10"></polyline>
+                        <polyline points="1 20 1 14 7 14"></polyline>
+                        <path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"></path>
+                    </svg>
+                    Refresh Data
+                </button>
+            </div>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <header class="topbar glass-container">
+                <div>
+                    <h1>Market Volatility Tracking</h1>
+                    <p class="subtitle">Real-time simulation</p>
+                </div>
+                <div class="status-indicator">
+                    <span class="pulse"></span> <span>Live</span>
+                </div>
+            </header>
+            
+            <section class="chart-section glass-container">
+                <div class="chart-wrapper">
+                    <!-- Chart.js canvas -->
+                    <canvas id="mainChart"></canvas>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Chart.js Integration via CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
